@@ -14,6 +14,7 @@
 		5D62168C228575C700541A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D62168A228575C700541A4E /* LaunchScreen.storyboard */; };
 		5D6216962285762300541A4E /* ListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6216952285762300541A4E /* ListNotesTableViewController.swift */; };
 		5D62169E22857B2600541A4E /* listNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62169D22857B2600541A4E /* listNotesTableViewCell.swift */; };
+		5D6216A0228598E300541A4E /* DisplayNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D62169F228598E300541A4E /* DisplayNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5D62168D228575C700541A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6216952285762300541A4E /* ListNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewController.swift; sourceTree = "<group>"; };
 		5D62169D22857B2600541A4E /* listNotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listNotesTableViewCell.swift; sourceTree = "<group>"; };
+		5D62169F228598E300541A4E /* DisplayNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				5D6216952285762300541A4E /* ListNotesTableViewController.swift */,
+				5D62169F228598E300541A4E /* DisplayNoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				5D6216962285762300541A4E /* ListNotesTableViewController.swift in Sources */,
 				5D62167F228575C500541A4E /* AppDelegate.swift in Sources */,
 				5D621687228575C500541A4E /* DeathNote2.xcdatamodeld in Sources */,
+				5D6216A0228598E300541A4E /* DisplayNoteViewController.swift in Sources */,
 				5D62169E22857B2600541A4E /* listNotesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
