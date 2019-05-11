@@ -62,7 +62,7 @@ class ListNotesTableViewController: UITableViewController {
        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath)
         
           let note = notes[indexPath.row]
-        cell.textLabel?.text = "\(note.deadPerson) \n Reason: \(note.deathReason) \n Time: \(note.deathDate)"
+        cell.textLabel?.text = "\(note.deadPerson) \n Reason: \(note.deathReason) \n"
         cell.textLabel?.sizeToFit()
         cell.textLabel?.numberOfLines = 0
         
