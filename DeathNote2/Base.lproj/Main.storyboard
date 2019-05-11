@@ -100,6 +100,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="IsG-LY-O7c" id="jPq-Ic-bJc"/>
+                        <outlet property="reasonTextField" destination="mUm-Bp-Afr" id="EUb-hK-63b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxs-Kl-dob" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="USc-60-SBH" userLabel="Exit" sceneMemberID="exit"/>
