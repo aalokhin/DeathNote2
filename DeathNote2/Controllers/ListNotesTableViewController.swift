@@ -33,9 +33,9 @@ class ListNotesTableViewController: UITableViewController {
         
         var randI : Int
         
-        for i in 0...15
+        for i in 0...1
         {
-            randI = Int(arc4random_uniform(7))
+            randI =  Int(arc4random_uniform(UInt32(reasons.count)))
             notes.append(Note(person: "bitch \(i)", reason : reasons[randI], date : Date()))
         }
         
