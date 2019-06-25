@@ -18,14 +18,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNotesTableViewCell" id="Pjl-dX-LfC">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listNotesTableViewCell" rowHeight="119" id="Pjl-dX-LfC" customClass="ListNotesTableViewCell" customModule="DeathNote2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pjl-dX-LfC" id="daF-ab-ojb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="118.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OfS-8o-UHk">
+                                            <rect key="frame" x="5" y="5" width="365" height="108.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z74-QR-L2w">
+                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loM-dg-jvX">
+                                                    <rect key="frame" x="0.0" y="42" width="365" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQf-3p-lqm">
+                                                    <rect key="frame" x="0.0" y="84" width="365" height="24.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OfS-8o-UHk" firstAttribute="top" secondItem="daF-ab-ojb" secondAttribute="top" constant="5" id="3lb-5h-f7b"/>
+                                        <constraint firstItem="OfS-8o-UHk" firstAttribute="leading" secondItem="daF-ab-ojb" secondAttribute="leading" constant="5" id="6VP-lN-HP2"/>
+                                        <constraint firstAttribute="bottom" secondItem="OfS-8o-UHk" secondAttribute="bottom" constant="5" id="NzN-HH-t7k"/>
+                                        <constraint firstAttribute="trailing" secondItem="OfS-8o-UHk" secondAttribute="trailing" constant="5" id="zRX-sg-OGT"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="date" destination="z74-QR-L2w" id="Dlq-IJ-tQ0"/>
+                                    <outlet property="name" destination="loM-dg-jvX" id="64h-kT-AZr"/>
+                                    <outlet property="reason" destination="oQf-3p-lqm" id="gIJ-HA-Lg2"/>
                                     <segue destination="C5K-NP-TYt" kind="show" identifier="displayNote" id="c9L-nA-wEw"/>
                                 </connections>
                             </tableViewCell>
@@ -45,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJB-Xo-hMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="687"/>
+            <point key="canvasLocation" x="772" y="686.80659670164926"/>
         </scene>
         <!--Title-->
         <scene sceneID="L5H-tG-Qfb">

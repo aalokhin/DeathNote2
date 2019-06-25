@@ -59,12 +59,18 @@ class ListNotesTableViewController: UITableViewController {
         // 2
     //let randI = Int(arc4random_uniform(5))
 
-       let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath)
+       let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
         
           let note = notes[indexPath.row]
-        cell.textLabel?.text = "\(note.deadPerson) \n Reason: \(note.deathReason) \n"
-        cell.textLabel?.sizeToFit()
-        cell.textLabel?.numberOfLines = 0
+//        cell.textLabel?.text = "\(note.deadPerson) \n Reason: \(note.deathReason) \n"
+//        cell.textLabel?.sizeToFit()
+//        cell.textLabel?.numberOfLines = 0
+//        cell.date
+        cell.name.text = "\(note.deadPerson)"
+         cell.reason.text = "\(note.deathReason)"
+         cell.reason.sizeToFit()
+         cell.reason.numberOfLines = 0
+        
         
         designCell(cell: cell)
         return cell
