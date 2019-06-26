@@ -33,7 +33,7 @@ class ListNotesTableViewController: UITableViewController {
         
         var randI : Int
         
-        for i in 0...1
+        for i in 0...2
         {
             randI =  Int(arc4random_uniform(UInt32(reasons.count)))
             notes.append(Note(person: "bitch \(i)", reason : reasons[randI], date : Date()))
@@ -44,37 +44,31 @@ class ListNotesTableViewController: UITableViewController {
         print("Great we are in!")
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             notes.remove(at: indexPath.row)
         }
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 1
+  
         return notes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // 2
-    //let randI = Int(arc4random_uniform(5))
 
        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
-        
           let note = notes[indexPath.row]
-//        cell.textLabel?.text = "\(note.deadPerson) \n Reason: \(note.deathReason) \n"
-//        cell.textLabel?.sizeToFit()
-//        cell.textLabel?.numberOfLines = 0
-//        cell.date
+
        
         cell.name.text = "\(note.deadPerson)"
-         cell.reason.text = "\(note.deathReason)"
-         cell.reason.sizeToFit()
-         cell.reason.numberOfLines = 0
-         cell.date.text = note.deathDate.toString()
-        
-        
-        designCell(cell: cell)
+        cell.reason.text = "\(note.deathReason)"
+        cell.reason.sizeToFit()
+        cell.reason.numberOfLines = 0
+        cell.date.text = note.deathDate.toString()
+        designCell(cell : cell)
         return cell
     }
 

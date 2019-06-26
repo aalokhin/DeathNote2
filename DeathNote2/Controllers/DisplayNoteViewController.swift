@@ -23,9 +23,11 @@ class DisplayNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let backgroundImage = UIImage(named: "canvas")
-        //let imageView = UIImageView(image: backgroundImage)
-        //self.view.backgroundView = imageView
+        if (note != nil){
+            txtDatePicker.isEnabled = false
+        }
+        txtDatePicker.minimumDate = Date()
+
         
     }
     
@@ -44,32 +46,40 @@ class DisplayNoteViewController: UIViewController {
         }
 
     }
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let identifier = segue.identifier,
             let destination = segue.destination as? ListNotesTableViewController
             else { return }
-        
-
-        
         switch identifier {
         case "save" where note != nil:
-            note?.deadPerson = nameTextField.text ?? ""
-            note?.deathReason = reasonTextField.text ?? ""
+            print("note exists")
+            if (!nameTextField.text!.isEmpty){
+                print("modyfying note")
+                note?.deadPerson = nameTextField.text!
+                note?.deathReason = reasonTextField.text ?? ""
+            }
+            print("tried to leave name field empty")
             destination.tableView.reloadData()
-        // 3
+
         case "save" where note == nil:
+             print("note is being created")
             let note = Note()
             note.deadPerson = nameTextField.text ?? ""
-            
             let randI = Int(arc4random_uniform(UInt32(reasons.count)))
-            //note.deathReason = reasonTextField.text ?? ""
-            note.deathReason = reasons[randI]
+             if (reasonTextField.text.isEmpty){
+                note.deathReason = reasons[randI]
+             }
+             else{
+                note.deathReason = reasonTextField.text
+             }
             note.deathDate = txtDatePicker.date
-            
-            //note.deathDate = Date()
+             
+//             if (note.deadPerson.isEmpty){
+//                let alertController = UIAlertController(title: "hey there", message: "Please enter the name of a person you want me to murder", preferredStyle: .alert)
+//                self.present(alertController, animated: true, completion: nil)
+//                destination.tableView.reloadData()
+//                }
             if (!note.deadPerson.isEmpty){
                 let destination = segue.destination as! ListNotesTableViewController
                 destination.notes.append(note)
@@ -81,19 +91,5 @@ class DisplayNoteViewController: UIViewController {
             print("unexpected segue identifier")
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let identifier = segue.identifier else { return }
-//
-//        switch identifier {
-//        case "save":
-//            print("save bar button item tapped")
-//
-//        case "cancel":
-//            print("cancel bar button item tapped")
-//
-//        default:
-//            print("unexpected segue identifier")
-//        }
-//    }
+
 }
